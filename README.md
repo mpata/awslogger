@@ -17,5 +17,15 @@ A package to provide python logging handlers for multiple AWS services.
 **CloudWatch Logs Handler**
 ```python
 import awslogger
-awslogger.CloudWatchLogsHandler(session=boto3.Session(), log_group_name="myloggroup", log_stream_prefix="demo-")
+import boto3
+import logging
+
+handler = awslogger.CloudWatchLogsHandler(
+				session=boto3.Session(), 
+				log_group_name="myloggroup", 
+				log_stream_prefix="demo-")
+logger = logging.get_logger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+logger.info("Hello world!")
 ```
