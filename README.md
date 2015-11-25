@@ -1,6 +1,14 @@
 # awslogger
 A package to provide python logging handlers for multiple AWS services.
 
+## Supported services
+* CloudWatch Logs
+
+## WIP
+* DynamoDB
+* SQS
+* SNS
+
 ## Dependencies
 * boto3
 * botocore
